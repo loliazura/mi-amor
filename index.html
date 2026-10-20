@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Universe ♡</title>
+
+    <style>
+        :root {
+            --pink: #f7cbd8;
+            --rose: #bd5878;
+            --cream: #fff9f4;
+            --ink: #563947;
+            --muted: #987985;
+            --lilac: #e8dcf7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 85px 20px;
+            scroll-margin-top: 55px;
+        }
+
+        .section-inner {
+            max-width: 980px;
+            margin: auto;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.85;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: clamp(12px, 3vw, 32px);
+            flex-wrap: wrap;
+            padding: 15px;
+            background: #fff9f4ef;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f1dce2;
+            font: 12px Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--rose);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 87vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                radial-gradient(ellipse at 20% 15%, #f8e0e8 0, transparent 35%),
+                radial-gradient(ellipse at 80% 75%, #e8dcf7 0, transparent 34%),
+                var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 760px;
+            position: relative;
+        }
+
+        .eyebrow {
+            font: 11px Arial, sans-serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--rose);
+        }
+
+        h1 {
+            font-size: clamp(48px, 9vw, 94px);
+            font-weight: normal;
+            line-height: .98;
+            margin: 25px 0 18px;
+            letter-spacing: -3px;
+        }
+
+        h1 em {
+            color: var(--rose);
+            font-weight: normal;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .heart {
+            font-size: 22px;
+            color: var(--rose);
+            animation: pulse 1.8s infinite;
+            display: inline-block;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 14px 22px;
+            border-radius: 30px;
+            background: var(--rose);
+            color: white;
+            font: 12px Arial, sans-serif;
+            letter-spacing: 1px;
+            border: 0;
+            cursor: pointer;
+            box-shadow: 0 8px 22px #bd58782b;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .floating {
+            position: absolute;
+            color: #d38aa1;
+            opacity: .65;
+            font-size: 22px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .f1 {
+            left: 10%;
+            top: 25%;
+        }
+
+        .f2 {
+            right: 12%;
+            top: 22%;
+            animation-delay: 1s;
+        }
+
+        .f3 {
+            right: 18%;
+            bottom: 14%;
+            animation-delay: 2s;
+        }
+
+        .f4 {
+            left: 15%;
+            bottom: 17%;
+            animation-delay: .5s;
+        }
+
+        /* ANIMATIONS */
+        @keyframes pulse {
+            50% {
+                transform: scale(1.22);
+            }
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-15px) rotate(10deg);
+            }
+        }
+
+        /* SECTION HEADINGS */
+        .kicker {
+            font: 11px Arial, sans-serif;
+            letter-spacing: 3px;
+            color: var(--rose);
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: clamp(32px, 5vw, 49px);
+            font-weight: normal;
+            margin: 14px 0 18px;
+        }
+
+        /* LOVE LETTER */
+        .message {
+            background: white;
+            border: 1px solid #f0dce3;
+            border-radius: 22px;
+            padding: clamp(24px, 5vw, 52px);
+            max-width: 760px;
+            margin: 35px auto;
+            box-shadow: 0 8px 25px rgba(189, 88, 120, 0.50);
+        }
+
+        .message p {
+            font-size: 17px;
+        }
+
+        .signature {
+            font-style: italic;
+            color: var(--rose);
+            font-size: 15px;
+            margin-top: 28px;
+        }
+
+        .soft {
+            background: #f9edf1;
+        }
+
+        /* PHOTO ALBUMS */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .photo-card {
+            background: white;
+            border: 1px solid #f0dce3;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(189, 88, 120, 0.30);
+            transition: .3s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px) rotate(-.5deg);
+        }
+
+        .photo {
+            width: 100%;
+            height: 270px;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #f6d8e1, #e6d9f5);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .photo-card h3 {
+            font-size: 19px;
+            font-weight: normal;
+            margin: 13px 5px 4px;
+        }
+
+        .photo-card p {
+            font: 12px Arial, sans-serif;
+            color: var(--muted);
+            margin: 0 5px 8px;
+        }
+
+        /* PROMISES */
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .promise {
+            padding: 22px 16px;
+            background: #fff;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #f0dce3;
+            box-shadow: 0 5px 5px rgba(189, 88, 120, 0.30);
+        }
+
+        .promise span {
+            font-size: 25px;
+        }
+
+        .promise p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* RANDOM LOVE NOTES */
+        .note-box {
+            max-width: 650px;
+            margin: 30px auto 0;
+            background: white;
+            border: 1px dashed #dca6b8;
+            padding: 28px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .note-box p {
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 45px 20px;
+            background: #f4e3e9;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer strong {
+            color: var(--rose);
+            font-weight: normal;
+        }
+
+        .small {
+            font: 11px Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* MOBILE RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            .album-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .photo {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+            }
+
+            .photo-card {
+                padding: 8px;
+            }
+
+            .photo-card h3 {
+                font-size: 15px;
+            }
+
+            .promise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 78vh;
+            }
+
+            section {
+                padding: 65px 18px;
+            }
+
+            nav {
+                gap: 12px;
+                font-size: 10px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#letter">Message</a>
+        <a href="#albums">Albums</a>
+        <a href="#promises">Notes</a>
+        <a href="#little-note">Random</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <span class="floating f1">♡</span>
+        <span class="floating f2">✦</span>
+        <span class="floating f3">♡</span>
+        <span class="floating f4">✧</span>
+
+        <div class="hero-inner">
+            <div class="eyebrow">
+                Happy 58th Monthsary my lovieeee
+            </div>
+
+            <h1>
+                My favorite <br>
+                <em>person</em>
+            </h1>
+
+            <p class="subtitle">
+                you are the best thing, that's ever been MINE.
+                <span class="heart">♡</span>
+            </p>
+
+            <a class="button" href="#letter">
+                A message for you ✉
+            </a>
+
+            <p class="small" style="margin-top:40px;color:#b68b9b">
+                MADE WITH LOVE, ALWAYS
+            </p>
+        </div>
+    </header>
+
+    <!-- LOVE LETTER SECTION -->
+    <section id="letter">
+        <div class="section-inner center">
+            <div class="kicker">my monthsary message</div>
+
+            <h2>To my one and only love</h2>
+
+            <article class="message">
+                <p>Love ♡</p>
+
+                <p>
+                    Happy 58th monthsary to us! Thank you for being my boyfiee
+                    and for understanding me even on unpleasant days. Love, please
+                    remember that even when there are days I gets busy at school,
+                    when I'm tired, or when I'm with my friends, please remember that
+                    my love never changes.
+                </p>
+
+                <p>
+                    You might be thinking that "I love you because I have to" or maybe
+                    I'm not happy with you anymore. Love, please don't think of me that way,
+                    you know those aren't true. I'm happy with you, I'm also happy when I
+                    know you're genuinely happy and most of all, I love you because that's how I feel.
+                </p>
+
+                <p>
+                    I'm sorry for making you think and feel that way love. I got caught
+                    up with everything that I forget to show how much you mean to me.
+                    I wish I spend more time talking to you. I wish I hadn't make you
+                    feel neglected. I wish I had treated you better. I'm so sorry for
+                    disappointing you again. Love, sorry for everything, specifically
+                    my shortcomings. You didn't deserve everything I have done to you.
+                    I'll try my best again para makabawi sayo.
+                </p>
+
+                <p>
+                    Love don't tampo tampo na okay? kilitihin kitaaa.
+                </p>
+
+                <p>
+                    Again, Happy 58th Monthsary my cutie boyfiee, and
+                    my soon to be husband. <br>
+                    I truly love you always with all my heart Levi S. Lagat. ♡
+                </p>
+
+                <div class="signature">
+                    yours truly, <br> VMA ♡
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- PHOTO SECTION -->
+    <section class="soft" id="albums">
+        <div class="section-inner center">
+            <div class="kicker">capture the love</div>
+
+            <h2>Galleries of love</h2>
+
+            <p style="color:var(--muted)">
+                A place for the memories I never want
+                to forget.
+            </p>
+
+            <div class="album-grid">
+
+                <div class="photo-card">
+                    <div class="photo">
+                        <img src="IMG_1521.PNG" alt="Arcade">
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo" style="background:linear-gradient(145deg,#e5dafa,#f8d9e5)">
+                        <img src="smlang.jpeg" alt="Arcade">
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo" style="background:linear-gradient(145deg,#f8e6c9,#f4cdd9)">
+                        <img src="IMG_1523.PNG" alt="Arcade">
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo" style="background:linear-gradient(145deg,#f6dce8,#dcd9f6)">
+                        <img src="simba.jpeg" alt="Arcade">
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo" style="background:linear-gradient(145deg,#dceee8,#f6dbe4)">
+                        <img src="heart.jpg" alt="Arcade">
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo" style="background:linear-gradient(145deg,#f8e7c9,#eadcf8)">
+                        <img src="fcourt.jpeg" alt="Arcade">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTES SECTION -->
+    <section class="soft" id="promises">
+        <div class="section-inner center">
+            <div class="kicker">a few things I want you to know</div>
+
+            <h2>LOVE NOTES</h2>
+
+            <div class="promise-grid">
+
+                <div class="promise">
+                    <span>♡</span>
+                    <p>
+                       You're my today, my tomorrow, my always. 
+                    </p>
+                </div>
+
+                <div class="promise">
+                    <span>☁</span>
+                    <p>
+                        Umulan man o umaraw, I'll be here for you, always.
+                    </p>
+                </div>
+
+                <div class="promise">
+                    <span>✿</span>
+                    <p>
+                       You and me in every other life, every single time. <br> - Austin
+                    </p>
+                </div>
+
+                <div class="promise">
+                    <span>☾</span>
+                    <p>
+                        The light you brought shone upon my dark world. <br>- Adie
+                    </p>
+                </div>
+
+                <div class="promise">
+                    <span>∞</span>
+                    <p>
+                        I'll choose you everytime, 'til the end of time.
+                    </p>
+                </div>
+
+                <div class="promise">
+                    <span>♡</span>
+                    <p>
+                        It's always better when we're together.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RANDOM LOVE NOTES SECTION -->
+    <section id="little-note">
+        <div class="section-inner center">
+            <div class="kicker">A small gesture of cheering you up</div>
+
+            <h2>Random Notes</h2>
+
+            <p style="color:var(--muted)">
+                hmm...it might surprise you
+            </p>
+
+            <div class="note-box">
+                <div id="note-icon" style="font-size:30px">♡</div>
+
+                <p id="note-text">
+                    You are loved more than you know. <br>
+                    Take a breath. Ready?
+                </p>
+
+                <button class="button" onclick="nextNote()">
+                     Click me ♡
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>
+            made with all my love
+            <strong>for my favorite boy</strong> ♡
+        </p>
+
+        <p class="small">
+            OUR LITTLE UNIVERSE · ALWAYS AND PUHON
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT: LOVE NOTES -->
+    <script>
+        const notes = [
+            [
+                "♡",
+                "Love starts as a feeling, but to continue is a choice, and I find myself choosing you, more and more every day. - Wetch"
+            ],
+            [
+                "☁",
+                "If today was heavy, you don't have to solve everything tonight. Rest a little."
+            ],
+            [
+                "✿",
+                "In case no one told you today - you're doing better than you think, and I'm so proud of you."
+            ],
+            [
+                "☾",
+                "If you miss me, ede tawagan mo kooo"
+            ],
+            [
+                "∞",
+                "Us, in every lifetime."
+            ],
+            [
+                "♡",
+                "If it's you, it's always worth it."
+            ]
+            [
+                "☆",
+                "Besides chocolate, you're my favorite."
+            ],
+            [
+                "☆",
+                "Congrats on surviving another month with me. you're so brave."
+            ],
+            [
+                "♡",
+                "Another month of being obsessed with the same person."
+            ],
+            [
+                "♡",
+                "Still crushing on you, baby."
+            ],
+            [
+                "♡",
+                "Bawal ka nang magsawa."
+            ],
+            [
+                "♡",
+                "I wanna eat you baby."
+            ],
+            [
+                "♡",
+                "Puhon, kasal na tayo. ngayon, away muna tayo kung sino mas cute."
+            ],
+             [
+                "♡",
+                "Forever na 'to, beh. wala nang atrasan."
+            ],
+            [
+                "♡",
+                "Another month na naman tayong parehong baliw sa isa't isa"
+            ],
+            [
+                "♡",
+                "Ikaw lang ang gusto kong ka-share sa kama… matulog ha"
+            ],
+             [
+                "♡",
+                "Sana sa susunod, hindi lang goodnight kiss ang goodnight natin."
+            ],
+            [
+                "♡",
+                "Another month of loving you and wanting your kisses… and other stuff. hehe..."
+            ],
+            [
+                "♡",
+                "Maangas sa public, clingy sa private."
+            ],
+            [
+                "♡",
+                "Mahal kita, baby, pati yung dirty side mo."
+            ],
+        ];
+
+        let noteIndex = 0;
+
+        function nextNote() {
+            noteIndex = (noteIndex + 1) % notes.length;
+
+            document.getElementById("note-icon").textContent =
+                notes[noteIndex][0];
+
+            document.getElementById("note-text").textContent =
+                notes[noteIndex][1];
+        }
+    </script>
+
+</body>
+</html>
